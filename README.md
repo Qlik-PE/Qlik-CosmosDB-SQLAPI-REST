@@ -163,11 +163,11 @@ The SQL API can be interacted with using REST or native code such as
 There are a number of connectivity methods validated with Qlik Partner
 Engineering:
 
-A) SQL API using REST Connector in Qlik Sense and QlikView
-A) MongoDB API using the Qlik Sense MongoDB Connector (Beta currently,
+1. SQL API using REST Connector in Qlik Sense and QlikView
+2. MongoDB API using the Qlik Sense MongoDB Connector (Beta currently,
     Oct 2018)
-A) MongoDB API using the ODBC connector\*
-A) Mongo DB API using the gRPC connector for Qlik Core
+3. MongoDB API using the ODBC connector\*
+4. Mongo DB API using the gRPC connector for Qlik Core
 
 The focus of this document is the details of connecting to the SQL API
 via the REST Connector.
