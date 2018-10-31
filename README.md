@@ -9,7 +9,7 @@ must decide which API you want to use as the data will get stored in
 corresponding data
 model/format. ![https://github.com/Qlik-PE/Qlik-Cosmos-DB-ODBC-/raw/master/media/image1.png](/media/image2.png)
 
-Key Cosmos DB capabilities
+## Key Cosmos DB capabilities
 
 -   Turnkey global distribution
 
@@ -107,8 +107,7 @@ predefined queries to hold you back. That means you can ask new
 questions and create analytics without having to build new queries or
 wait for the experts.
 
-![https://github.com/Qlik-PE/Qlik-Cosmos-DB-ODBC-/raw/master/media/image2.png](/media/image3.png){width="7.504076990376203in"
-height="2.806791338582677in"}
+![https://github.com/Qlik-PE/Qlik-Cosmos-DB-ODBC-/raw/master/media/image2.png](/media/image3.png)
 
 Interactive analysis, without boundaries
 ----------------------------------------
@@ -164,14 +163,11 @@ The SQL API can be interacted with using REST or native code such as
 There are a number of connectivity methods validated with Qlik Partner
 Engineering:
 
-a)  SQL API using REST Connector in Qlik Sense and QlikView
-
-b)  MongoDB API using the Qlik Sense MongoDB Connector (Beta currently,
+- a)  SQL API using REST Connector in Qlik Sense and QlikView
+- b)  MongoDB API using the Qlik Sense MongoDB Connector (Beta currently,
     Oct 2018)
-
-c)  MongoDB API using the ODBC connector\*
-
-d)  Mongo DB API using the gRPC connector for Qlik Core
+- c)  MongoDB API using the ODBC connector\*
+- d)  Mongo DB API using the gRPC connector for Qlik Core
 
 The focus of this document is the details of connecting to the SQL API
 via the REST Connector.
