@@ -288,13 +288,14 @@ Function App is done in the following manner:
     ![](/media/image12.png)\
     Here is the format of the JSON required in the Request Body\
     {
-
+```
 > {
 >   "verb": "GET",
 >   "resourceType": "docs",
 >   "resourceId": "dbs/vide_gamesdb/colls/vgdata",
 >   "masterKey": "BlahBlahBlahBlahBlahMh0yb39aaApzk5t8p8KTmWSLmetXFqjDNNNMO4iXTaV2KMGWMwPj8LvQ2HlBtAg0Lxhog=="
 > }
+```
 NOTE: It's good practice to test this in Postman or another REST client before attempting to run in Qlik Sense, it should work outside of Qlik first.
 
 6.  Give it a name and click "Test Connection". If it succeeds, click
