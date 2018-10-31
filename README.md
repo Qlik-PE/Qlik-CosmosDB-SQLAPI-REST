@@ -1,4 +1,4 @@
-# Connecting to CosmosDB SQL API from Qlik Sense via REST Connector
+# Connecting to CosmosDB SQL API from Qlik Sense using the REST Connector
 
 ## Cosmos DB Overview
 
