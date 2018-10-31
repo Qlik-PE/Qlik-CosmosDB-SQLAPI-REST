@@ -1,0 +1,1 @@
+# Qlik-CosmosDB-SQLAPI-REST
