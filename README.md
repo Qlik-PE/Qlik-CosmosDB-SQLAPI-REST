@@ -1,5 +1,7 @@
 # Connecting to CosmosDB SQL API from Qlik Sense Using the Built-in REST Connector
 
+*Authors: Chris Larsen, Qlik & Justine Cocchi, Microsoft*
+
 ## Cosmos DB Overview
 
 Cosmos DB is a fast growing, multi-modal database service in Microsoft
