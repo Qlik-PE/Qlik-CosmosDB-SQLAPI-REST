@@ -1,6 +1,6 @@
 # Connecting to CosmosDB SQL API from Qlik Sense via REST Connector
 
-Cosmos DB Overview
+## Cosmos DB Overview
 
 Cosmos DB is a fast growing, multi-modal database service in Microsoft
 Azure offering several API\'s. Currently, the SQL API is the most
@@ -70,8 +70,8 @@ Key Cosmos DB capabilities
             specification](http://tinkerpop.apache.org/), Apache
             Gremlin)
 
-        -   **[Table
-            API]**(https://docs.microsoft.com/en-us/azure/cosmos-db/table-introduction):
+        -   **Table
+            API**(https://docs.microsoft.com/en-us/azure/cosmos-db/table-introduction):
             A key-value database service built to provide premium
             capabilities (for example, automatic indexing, guaranteed
             low latency, global distribution) to existing Azure Table
