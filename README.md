@@ -364,9 +364,7 @@ h.  ...and choose Create new connection\
 
 i.  Choose the REST Connector\
     ![](/media/image9.png)\
-    For the masterKey and Base URL, get that from the Azure Portal, go
-    to the CosmosDB Account for the SQL API created, and copy the
-    Primary Read-Only Connection String URL:\
+    + For the masterKey and Base URL, get that from the Azure Portal, go to the CosmosDB Account for the SQL API created, and copy the Primary Read-Only Connection String URL:\
     ![](/media/image17.png)
 
 j.  Construct the URl with the DNS name of the connection string from
