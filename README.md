@@ -426,8 +426,8 @@ t.  For quick copy/paste, here is the text:
 
 Click Load Data, and see if it loads. If it's successful, it should
     look like this:\
-    ![](/media/image23.png)\\
-    Yippeeee! Now it's ready for deployment.
+    ![](/media/image23.png)\
+    Now it's ready for deployment
 
 If you need to implement additional document collections do the same
 step as above. Just remember this is how you create a new connection to
