@@ -311,17 +311,19 @@ NOTE: It's good practice to test this in Postman or another REST client before a
     this scriptlet to store the sessionId (authorization token) and also
     do some basic error handling:
 
-> Let vSessionId_tmp=peek('sessionId');\
-> set vSessionId=$(vSessionId_tmp);
-> Let vMS_Date_tmp=peek('date');
-> set vMS_Date=$(vMS_Date_tmp);
-> Let vMS_Version='2017-02-22';
-> trace \'sessionid: $(vSessionId)';
-> IF \'$(vSessionId)'=' then
->    trace AUTHORIZATION FAILED;
-> exit script;
->
-> ENDIF
+```
+ Let vSessionId_tmp=peek('sessionId');\
+ Set vSessionId=$(vSessionId_tmp);
+ Let vMS_Date_tmp=peek('date');
+ Set vMS_Date=$(vMS_Date_tmp);
+ Let vMS_Version='2017-02-22';
+ trace \'sessionid: $(vSessionId)';
+ IF \'$(vSessionId)'=' then
+    trace AUTHORIZATION FAILED;
+ exit script;
+
+ ENDIF
+```
 
 9.  Load again and ensure it works, then we will move on to the next
     step of creating the pull of documents.
@@ -417,18 +419,13 @@ s.  In order to make it dynamic, we add the WITH CONNECTION() syntax
     ![](/media/image22.png)
 
 t.  For quick copy/paste, here is the text:
-
->    WITH CONNECTION(url
->    \"https://qlik-sql-api.documents.azure.com/dbs/video\_gamesdb/colls/vgdata/docs\",
->
->    HTTPHEADER \"Authorization\" \"\$(vSessionId)\",
->
->    HTTPHEADER \"x-ms-date\" \"\$(vMS\_Date)\",
->
->    HTTPHEADER \"x-ms-version\" \"\$(vMS\_Version)\",
->
->    HTTPHEADER \"x-ms-max-item-count\" \"1000\")
-
+```
+    WITH CONNECTION(url "https://qlik-sql-api.documents.azure.com/dbs/video\_gamesdb/colls/vgdata/docs\",
+    HTTPHEADER "Authorization" "$(vSessionId)",
+    HTTPHEADER "x-ms-date" "$(vMS_Date)",
+    HTTPHEADER "x-ms-version" "$(vMS_Version)",
+    HTTPHEADER "x-ms-max-item-count" "1000")
+```
 <!-- -->
 
 a.  Click Load Data, and see if it loads. If it's successful, it should
