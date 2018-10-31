@@ -373,8 +373,7 @@ j.  Construct the URl with the DNS name of the connection string from
     ![](/media/image18.png)
 
 k.  The method is "GET" and Authentication Schema is Anonymous\
-    ![](/media/image19.png)
-
+    ![](/media/image19.png)\
     The first time we create the connection to the document collection
     (synonymous with a Table in a database), the appropriate header
     parameters need to be hardcoded. In the later steps we will
@@ -404,11 +403,9 @@ q.  "x-ms-max-item-count" is used for paging, this is the maximum amount
 
 r.  Paging is also necessary, and the way this works in CosmosDB SQL API
     is by using the "NextToken" paging method. Set it up like this:\
-    ![](/media/image21.png)
-
+    ![](/media/image21.png)\
     As it is the first time you are creating it, give it a name, and hit
-    Create.
-
+    Create. \
     The script will be injected into the Load Script
 
 s.  In order to make it dynamic, we add the WITH CONNECTION() syntax
