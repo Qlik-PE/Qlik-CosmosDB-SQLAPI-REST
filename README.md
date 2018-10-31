@@ -1,6 +1,6 @@
 # Connecting to CosmosDB SQL API from Qlik Sense Using the Built-in REST Connector
 
-->Authors: Chris Larsen, Qlik & Justine Cocchi, Microsoft<-
+<span style="color:gray; text-align:center; font-size:2em;">Authors: Chris Larsen, Qlik & Justine Cocchi, Microsoft<span>
 
 ## Cosmos DB Overview
 
