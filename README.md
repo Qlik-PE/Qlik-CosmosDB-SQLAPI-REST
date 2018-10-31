@@ -1,6 +1,4 @@
-![](/media/image1.png){width="8.5in" height="11.0in"}**WHITE PAPER**
-
-Connecting to CosmosDB SQL API from Qlik Sense via REST Connector
+###Connecting to CosmosDB SQL API from Qlik Sense via REST Connector
 
 Cosmos DB Overview
 
@@ -9,8 +7,7 @@ Azure offering several API\'s. Currently, the SQL API is the most
 popular and widely used API. When you create a Cosmos DB account, you
 must decide which API you want to use as the data will get stored in
 corresponding data
-model/format. ![https://github.com/Qlik-PE/Qlik-Cosmos-DB-ODBC-/raw/master/media/image1.png](/media/image2.png){width="7.120370734908136in"
-height="4.272222222222222in"}
+model/format. ![https://github.com/Qlik-PE/Qlik-Cosmos-DB-ODBC-/raw/master/media/image1.png](/media/image2.png)
 
 Key Cosmos DB capabilities
 
@@ -46,26 +43,26 @@ Key Cosmos DB capabilities
     -   APIs for the following data models are supported with SDKs
         available in multiple languages:
 
-        -   [SQL
-            API](https://docs.microsoft.com/en-us/azure/cosmos-db/sql-api-introduction):
+        -   **[SQL
+            API]**(https://docs.microsoft.com/en-us/azure/cosmos-db/sql-api-introduction):
             A schema-less JSON database engine with rich SQL querying
             capabilities
 
-        -   [MongoDB
-            API](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction):
+        -   **[MongoDB
+            API]**(https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction):
             A massively scalable *MongoDB-as-a-Service* powered by Azure
             Cosmos DB platform. Compatible with existing MongoDB
             libraries, drivers, tools, and applications
 
-        -   [Cassandra
-            API](https://docs.microsoft.com/en-us/azure/cosmos-db/cassandra-introduction):
+        -   **[Cassandra
+            API]**(https://docs.microsoft.com/en-us/azure/cosmos-db/cassandra-introduction):
             A globally distributed Cassandra-as-a-Service powered by
             Azure Cosmos DB platform. Compatible with existing [Apache
             Cassandra](https://cassandra.apache.org/) libraries,
             drivers, tools, and applications
 
-        -   [Gremlin
-            API](https://docs.microsoft.com/en-us/azure/cosmos-db/graph-introduction):
+        -   **[Gremlin
+            API]**(https://docs.microsoft.com/en-us/azure/cosmos-db/graph-introduction):
             A fully managed, horizontally scalable graph database
             service that makes it easy to build and run applications
             that work with highly connected datasets supporting Open
@@ -475,8 +472,7 @@ t.  For quick copy/paste, here is the text:
 
 a.  Click Load Data, and see if it loads. If it's successful, it should
     look like this:\
-    ![](/media/image23.png){width="3.3243055555555556in"
-    height="3.4166666666666665in"}\
+    ![](/media/image23.png)\
     Yippeeee! Now it's ready for deployment.
 
 If you need to implement additional document collections do the same
