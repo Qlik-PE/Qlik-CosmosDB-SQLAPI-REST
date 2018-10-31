@@ -241,8 +241,7 @@ article.
 10. The endpoint for the sample PowerShell output below would be:
     <https://fn2jsa2qgd44mha.azurewebsites.net/api/MyFunction>
 
-11. ![](/media/image4.png){width="6.009027777777778in"
-    height="3.379861111111111in"}
+11. ![](/media/image4.png)
 
 12. Option 2: Find the endpoint from the Azure Portal
 
@@ -253,20 +252,17 @@ article.
     resource groups. Then select the new resource group you created your
     function in, and select the Azure Function App.
 
-15. ![](/media/image5.png){width="6.504861111111111in"
-    height="2.365972222222222in"}
+15. ![](/media/image5.png)
 
 16. Select "MyFunction" and then click the "\</\> Get function URL" link
     to get the endpoint for your function.
 
-17. ![](/media/image6.png){width="5.527777777777778in"
-    height="3.1479166666666667in"}
+17. ![](/media/image6.png)
 
 18. This is the endpoint you will use to generate authentication tokens
     for Cosmos DB.
 
-![](/media/image7.png){width="6.495138888888889in"
-height="2.236111111111111in"}
+![](/media/image7.png)
 
 Creating the Authentication REST Connection
 -------------------------------------------
@@ -276,42 +272,30 @@ Function App is done in the following manner:
 
 1.  In Qlik Sense, go to the Data Load Editor and choose Create new
     connection\
-    ![](/media/image8.png){width="2.342361111111111in"
-    height="1.4493055555555556in"}
+    ![](/media/image8.png)
 
 2.  Choose the REST Connector\
-    ![](/media/image9.png){width="6.495138888888889in"
-    height="3.4493055555555556in"}
+    ![](/media/image9.png)
 
 3.  Enter the URL for the Azure Function App that was deployed:\
-    ![](/media/image10.png){width="3.1020833333333333in"
-    height="3.370138888888889in"}
+    ![](/media/image10.png)
 
 4.  Choose POST for the Method\
-    ![](/media/image11.png){width="3.0743055555555556in"
-    height="3.3381944444444445in"}
+    ![](/media/image11.png)
 
 5.  For the Request Body, enter the parameters for the collection you
     will want to connect to, necessary "Verb", MasterKey, and Date..\
-    ![](/media/image12.png){width="2.9631944444444445in"
-    height="3.217361111111111in"}\
+    ![](/media/image12.png)\
     Here is the format of the JSON required in the Request Body\
     {
 
-> \"verb\": \"GET\",
->
-> \"resourceType\": \"docs\",
->
-> \"resourceId\": \"dbs/video\_gamesdb/colls/vgdata\",
->
-> \"masterKey\":
-> \"BlahBlahBlahBlahBlahMh0yb39aaApzk5t8p8KTmWSLmetXFqjDNNNMO4iXTaV2KMGWMwPj8LvQ2HlBtAg0Lxhog==\"
->
+> {
+>   "verb": "GET",
+>   "resourceType": "docs",
+>   "resourceId": "dbs/vide_gamesdb/colls/vgdata",
+>   "masterKey": "BlahBlahBlahBlahBlahMh0yb39aaApzk5t8p8KTmWSLmetXFqjDNNNMO4iXTaV2KMGWMwPj8LvQ2HlBtAg0Lxhog=="
 > }
->
-> NOTE: It's good practice to test this in Postman or another REST
-> client before attempting to run in Qlik Sense, it should work outside
-> of Qlik first.
+NOTE: It's good practice to test this in Postman or another REST client before attempting to run in Qlik Sense, it should work outside of Qlik first.
 
 6.  Give it a name and click "Test Connection". If it succeeds, click
     Create and it will insert the script into the load script. Click
@@ -319,30 +303,21 @@ Function App is done in the following manner:
 
 7.  You should see that the load script completes successfully, similar
     to this:\
-    ![](/media/image13.png){width="3.388888888888889in"
-    height="3.504861111111111in"}
+    ![](/media/image13.png)
 
 8.  Note there is an extra piece of text in this above output, it's the
     sessionId traced out. You should edit the injected script and append
     this scriptlet to store the sessionId (authorization token) and also
     do some basic error handling:
 
-> Let vSessionId\_tmp=peek(\'sessionId\');
->
-> set vSessionId=\$(vSessionId\_tmp);
->
-> Let vMS\_Date\_tmp=peek(\'date\');
->
-> set vMS\_Date=\$(vMS\_Date\_tmp);
->
-> Let vMS\_Version=\'2017-02-22\';
->
-> trace \'sessionid: \$(vSessionId)\';
->
-> IF \'\$(vSessionId)\'=\'\' then
->
-> trace AUTHORIZATION FAILED;
->
+> Let vSessionId_tmp=peek('sessionId');
+> set vSessionId=$(vSessionId_tmp);
+> Let vMS_Date_tmp=peek('date');
+> set vMS_Date=$(vMS_Date_tmp);
+> Let vMS_Version='2017-02-22';
+> trace \'sessionid: $(vSessionId)';
+> IF \'$(vSessionId)'=' then
+>    trace AUTHORIZATION FAILED;
 > exit script;
 >
 > ENDIF
@@ -357,8 +332,7 @@ Function App is done in the following manner:
     a.  Click Edit in the new Sheet
 
     b.  On the left side, find the Fields "sessionId" and "date"\
-        ![](/media/image14.png){width="3.078472222222222in"
-        height="1.9722222222222223in"}
+        ![](/media/image14.png)
 
     c.  Drag date onto the canvas, it will create you a Table object by
         default, then drag sessionId as well
@@ -366,8 +340,7 @@ Function App is done in the following manner:
     d.  Click Done and you will see the table with the 2 columns/values.
 
     e.  Right click on the table object and choose Export\
-        ![](/media/image15.png){width="6.504861111111111in"
-        height="1.6805555555555556in"}
+        ![](/media/image15.png)
 
     f.  Then choose Export Data and it will export an Excel file, open
         it. We're ready to move on to the next step which is to create
@@ -381,32 +354,26 @@ CosmosDB document collection is done in the following manner:
 
 g.  Go back to the Load Script in Qlik Sense and add another section of
     script, in this example "GetVGData\_Docs"\
-    ![](/media/image16.png){width="1.51875in"
-    height="1.5229166666666667in"}
+    ![](/media/image16.png)
 
 h.  ...and choose Create new connection\
-    ![](/media/image8.png){width="2.342361111111111in"
-    height="1.4493055555555556in"}
+    ![](/media/image8.png)
 
 i.  Choose the REST Connector\
-    ![](/media/image9.png){width="6.495138888888889in"
-    height="3.4493055555555556in"}
+    ![](/media/image9.png)
 
     For the masterKey and Base URL, get that from the Azure Portal, go
     to the CosmosDB Account for the SQL API created, and copy the
     Primary Read-Only Connection String URL:\
-    ![](/media/image17.png){width="6.504861111111111in"
-    height="1.9770833333333333in"}
+    ![](/media/image17.png)
 
 j.  Construct the URl with the DNS name of the connection string from
     Azure portal, and access the appropriate collection for your data
     using the following format:\
-    ![](/media/image18.png){width="3.361111111111111in"
-    height="3.6527777777777777in"}
+    ![](/media/image18.png)
 
 k.  The method is "GET" and Authentication Schema is Anonymous\
-    ![](/media/image19.png){width="3.4256944444444444in"
-    height="3.7222222222222223in"}
+    ![](/media/image19.png)
 
     The first time we create the connection to the document collection
     (synonymous with a Table in a database), the appropriate header
@@ -419,8 +386,7 @@ l.  Open the Excel file you downloaded from the previous Authentication
 
 m.  Scroll down in the REST Connector dialog until you get to "Query
     headers" and add the following parameters:\
-    ![](/media/image20.png){width="3.328472222222222in"
-    height="3.6020833333333333in"}
+    ![](/media/image20.png)
 
 n.  Authorization is the sessionID from the Excel file downloaded. Copy
     and paste it in. (NOTE: An extra line break could be added, it comes
@@ -438,8 +404,7 @@ q.  "x-ms-max-item-count" is used for paging, this is the maximum amount
 
 r.  Paging is also necessary, and the way this works in CosmosDB SQL API
     is by using the "NextToken" paging method. Set it up like this:\
-    ![](/media/image21.png){width="3.171527777777778in"
-    height="3.4493055555555556in"}
+    ![](/media/image21.png)
 
     As it is the first time you are creating it, give it a name, and hit
     Create.
@@ -448,28 +413,26 @@ r.  Paging is also necessary, and the way this works in CosmosDB SQL API
 
 s.  In order to make it dynamic, we add the WITH CONNECTION() syntax
     under the FROM clause:\
-    ![](/media/image22.png){width="4.379861111111111in"
-    height="4.0784722222222225in"}
+    ![](/media/image22.png)
 
 t.  For quick copy/paste, here is the text:
 
-    WITH CONNECTION(url
-    \"https://qlik-sql-api.documents.azure.com/dbs/video\_gamesdb/colls/vgdata/docs\",
-
-    HTTPHEADER \"Authorization\" \"\$(vSessionId)\",
-
-    HTTPHEADER \"x-ms-date\" \"\$(vMS\_Date)\",
-
-    HTTPHEADER \"x-ms-version\" \"\$(vMS\_Version)\",
-
-    HTTPHEADER \"x-ms-max-item-count\" \"1000\")
+>    WITH CONNECTION(url
+>    \"https://qlik-sql-api.documents.azure.com/dbs/video\_gamesdb/colls/vgdata/docs\",
+>
+>    HTTPHEADER \"Authorization\" \"\$(vSessionId)\",
+>
+>    HTTPHEADER \"x-ms-date\" \"\$(vMS\_Date)\",
+>
+>    HTTPHEADER \"x-ms-version\" \"\$(vMS\_Version)\",
+>
+>    HTTPHEADER \"x-ms-max-item-count\" \"1000\")
 
 <!-- -->
 
 a.  Click Load Data, and see if it loads. If it's successful, it should
     look like this:\
-    ![](/media/image23.png){width="3.3243055555555556in"
-    height="3.4166666666666665in"}\
+    ![](/media/image23.png)\
     Yippeeee! Now it's ready for deployment.
 
 If you need to implement additional document collections do the same
