@@ -363,8 +363,7 @@ h.  ...and choose Create new connection\
     ![](/media/image8.png)
 
 i.  Choose the REST Connector\
-    ![](/media/image9.png)
-
+    ![](/media/image9.png)\
     For the masterKey and Base URL, get that from the Azure Portal, go
     to the CosmosDB Account for the SQL API created, and copy the
     Primary Read-Only Connection String URL:\
@@ -428,9 +427,9 @@ t.  For quick copy/paste, here is the text:
 ```
 <!-- -->
 
-a.  Click Load Data, and see if it loads. If it's successful, it should
+Click Load Data, and see if it loads. If it's successful, it should
     look like this:\
-    ![](/media/image23.png)\
+    ![](/media/image23.png)\\
     Yippeeee! Now it's ready for deployment.
 
 If you need to implement additional document collections do the same
