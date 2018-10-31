@@ -1,4 +1,4 @@
-###Connecting to CosmosDB SQL API from Qlik Sense via REST Connector
+# Connecting to CosmosDB SQL API from Qlik Sense via REST Connector
 
 Cosmos DB Overview
 
@@ -43,26 +43,26 @@ Key Cosmos DB capabilities
     -   APIs for the following data models are supported with SDKs
         available in multiple languages:
 
-        -   **[SQL
-            API]**(https://docs.microsoft.com/en-us/azure/cosmos-db/sql-api-introduction):
+        -   **SQL
+            API**(https://docs.microsoft.com/en-us/azure/cosmos-db/sql-api-introduction):
             A schema-less JSON database engine with rich SQL querying
             capabilities
 
-        -   **[MongoDB
-            API]**(https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction):
+        -   **MongoDB
+            API**(https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction):
             A massively scalable *MongoDB-as-a-Service* powered by Azure
             Cosmos DB platform. Compatible with existing MongoDB
             libraries, drivers, tools, and applications
 
-        -   **[Cassandra
-            API]**(https://docs.microsoft.com/en-us/azure/cosmos-db/cassandra-introduction):
+        -   **Cassandra
+            API**(https://docs.microsoft.com/en-us/azure/cosmos-db/cassandra-introduction):
             A globally distributed Cassandra-as-a-Service powered by
             Azure Cosmos DB platform. Compatible with existing [Apache
             Cassandra](https://cassandra.apache.org/) libraries,
             drivers, tools, and applications
 
-        -   **[Gremlin
-            API]**(https://docs.microsoft.com/en-us/azure/cosmos-db/graph-introduction):
+        -   **Gremlin
+            API**(https://docs.microsoft.com/en-us/azure/cosmos-db/graph-introduction):
             A fully managed, horizontally scalable graph database
             service that makes it easy to build and run applications
             that work with highly connected datasets supporting Open
@@ -70,8 +70,8 @@ Key Cosmos DB capabilities
             specification](http://tinkerpop.apache.org/), Apache
             Gremlin)
 
-        -   [Table
-            API](https://docs.microsoft.com/en-us/azure/cosmos-db/table-introduction):
+        -   **[Table
+            API]**(https://docs.microsoft.com/en-us/azure/cosmos-db/table-introduction):
             A key-value database service built to provide premium
             capabilities (for example, automatic indexing, guaranteed
             low latency, global distribution) to existing Azure Table
@@ -472,7 +472,8 @@ t.  For quick copy/paste, here is the text:
 
 a.  Click Load Data, and see if it loads. If it's successful, it should
     look like this:\
-    ![](/media/image23.png)\
+    ![](/media/image23.png){width="3.3243055555555556in"
+    height="3.4166666666666665in"}\
     Yippeeee! Now it's ready for deployment.
 
 If you need to implement additional document collections do the same
